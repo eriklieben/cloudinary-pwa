@@ -1,0 +1,64 @@
+<template>
+ 
+  <style>
+    body {
+      font-family: 'Source Sans Pro', Helvetica, 'Open Sans', sans-serif;
+      background-color: #fff;
+    }
+
+    h1 {
+      font-family: "Verdana";
+      text-align: center;
+      font-size: 2em;
+      color: #EA2988;
+
+    }
+  
+    .add-to-cart {
+      text-align: center;
+    }
+
+    .add-to-cart .price {
+      color: #aeaeaa;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .add-to-cart button {
+      background-color: rgb(110, 77, 167);
+      font-size: 2rem;
+      display: block;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: none;
+      -webkit-tap-highlight-color: transparent;  
+      text-decoration: none;
+      color: #FFF;
+      text-align: center;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      margin: 0 auto;          
+    }    
+
+  </style>
+
+  <div with.bind="product">
+    <h1>${name}</h1>
+
+    <cloudinary>
+      <img 
+        sizes="(min-width: 36em) 75vw" 
+        alt.bind="name" 
+        src.bind="photoUri"
+        style="display: block; margin: 0 auto" />
+      <source size="750w" width="560" corner-radius="50" quality="30"></source>
+      <source size="1536w" width="1152" corner-radius="80"></source>
+    </cloudinary>
+
+    <div class="add-to-cart">
+      <span class="price">&#8364; ${ price }</span>
+      <button>add to cart</button>
+    </div>
+
+  </div> 
+</template>
